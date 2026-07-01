@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Blog </title>
+
+    <!--My css-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="image/logo.png" type="image/png">
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <nav id="Navbar" class="navbar px-3 px-md-5 py-md-1">
+        <div class="website-name text-white">
+            <img src="image/logo.png" alt="">
+            <h2 class="logo-style ps-2"> EMOZIN SDN. BHD. </h2>
+        </div>
+
+        <div class="navbar-menu pe-5">
+            <ul class="navbar-menu-links">
+                <a href="home.html">
+                    <li> Home </li>
+                </a>
+
+                <a href="About.html">
+                    <li> About US</li>
+                </a>
+
+                <a href="blog.html">
+                    <li> Blog </li>
+                </a>
+
+                <a href="contact.html">
+                    <li> Contact </li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="translate-container">
+            <a href="blog_korean.html" style="text-decoration: none;">
+                <button class="translate-button pt-1">
+                    <i class="fa-solid fa-globe pe-1"></i> Korean
+                </button>
+            </a>
+        </div>
+
+
+        <div class="navbar-menu-toggle" onclick="shownavbar()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="blog-header">
+        <div class="blog-header-bg">
+            <img src="image/blog-header2.jpg" alt="Header Background" class="blog-bg-image">
+        </div>
+        <div class="blog-gaming-overlay"> </div>
+        <div class="blog-gaming-content">
+            <h1 class="gaming-title">Welcome to Our Blog</h1>
+            <p>Stay updated with the latest news, tips, and insights about gaming. Explore our posts and join the
+                conversation!</p>
+        </div>
+    </header>
+
+    <!--Side Navbar-->
+    <aside class="side-navbar">
+        <p class="cross-symbol" onclick="closenavbar()"> <i class="fa fa-times" aria-hidden="true"></i> </p>
+
+        <div class="side-bar-log">
+            <img src="image/logo.png" alt="">
+            <h2 class="text-white pt-3"> EMOZIN </h2>
+        </div>
+
+        <div class="side-navbar-links pt-4">
+            <p class="side-navbar-link"> <a href="home.html"> Home </a> </p>
+            <p class="side-navbar-link"> <a href="About.html"> About </a> </p>
+            <p class="side-navbar-link"> <a href="blog.html"> Blog </a> </p>
+            <p class="side-navbar-link"> <a href="contact.html"> Contact </a> </p>
+
+            <div class="translate-container mt-5">
+                <a href="blog_korean.html">
+                    <button class="translate-button w-100 pt-1">
+                        <i class="fa-solid fa-globe pe-1"></i> Korean
+                    </button>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <section class="recent-blog-section">
+            <div class="container px-3 px-md-0 py-5">
+
+                <div class="row">
+                    <!-- Blog Content -->
+                    <div class="col-md-8">
+                        <h6 style="color: #00ffe1;">RECENT BLOGS</h6>
+
+                        <div class="blog-post mb-5">
+                            <h4>Dead Zone: Defend the Last City</h4>
+                            <div class="meta">
+                                Posted By Admin | On 22 Apr, 2025 | Comments
+                            </div>
+                            <img src="image/top-view-game1.jpg" alt="Zombie City Game Blog" />
+                            <p class="mt-3">
+                                Chaos has taken over as the undead swarm the last standing city. In *Dead Zone*, you are
+                                humanity’s final hope,
+                                battling through infected streets and collapsing buildings to protect what remains.
+                            </p>
+                            <p>
+                                Gear up with scavenged weapons, build barricades, and lead survivors through brutal
+                                missions. With wave-based
+                                hordes, eerie urban environments, and co-op gameplay, this zombie survival game will
+                                keep your heart racing
+                                till the very last stand.
+                            </p>
+                            <a href="#" class="text-decoration-none">MORE...</a>
+                        </div>
+
+                        <!-- Blog Post -->
+                        <div class="blog-post mb-5">
+                            <h4>Exploring the Depths of Eldoria: A Fantasy Realm Awaits</h4>
+                            <div class="meta">
+                                Posted By GameZone | On 24 Apr, 2025 | Comment
+                            </div>
+                            <img src="image/recent-blog-img.jpg" alt="Fantasy RPG Game Blog" />
+                            <p class="mt-3">
+                                Dive into Eldoria — a mythical realm where ancient dragons soar, kingdoms clash, and
+                                legends are forged. This RPG masterpiece blends open-world exploration with deep
+                                storytelling and jaw-dropping visuals.
+                            </p>
+                            <p>
+                                From epic boss fights to hidden quests across enchanted forests, every decision you make
+                                shapes your destiny. Whether you're a solo explorer or teaming up in co-op mode, Eldoria
+                                offers a fantasy experience like no other.
+                            </p>
+                            <a href="#" class="text-decoration-none">MORE...</a>
+                        </div>
+
+                        <!-- Blog Post -->
+                        <div class="blog-post mb-5">
+                            <h4>Phantom Tracks: The Ghost Train Showdown</h4>
+                            <div class="meta">
+                                Posted By RailRage | On 18 Apr, 2025 | Comments(27)
+                            </div>
+                            <img src="image/news-mini2.jpg" alt="Ghost Train Race Blog" />
+                            <p class="mt-3">
+                                The tracks are haunted, and the race is real. Phantom Tracks throws you into a
+                                high-speed showdown between
+                                spectral engines blazing through cursed railways under a blood moon sky.
+                            </p>
+                            <p>
+                                Drift through haunted tunnels, dodge paranormal traps, and outpace rival ghost trains.
+                                With each lap more intense
+                                than the last, only the bravest conductors will cross the finish line and escape the
+                                nightmare.
+                            </p>
+                            <a href="#" class="text-decoration-none">MORE...</a>
+                        </div>
+
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-md-4 blog-sidebar">
+                        <h5>Categories</h5>
+                        <ul>
+                            <li> Action </li>
+                            <li> Battle Royale </li>
+                            <li> Bikes </li>
+                            <li> Car Racing </li>
+                            <li> Fantasy </li>
+                            <li> Gloves </li>
+                            <li> Horror </li>
+                            <li> Multiplayer </li>
+                            <li> Open World </li>
+                            <li> Role-Playing Game </li>
+                            <li> Shooting </li>
+                            <li> Sports </li>
+                            <li> Style </li>
+                            <li> Survival </li>
+                            <li> Wrestling </li>
+                            <li> Watchers </li>
+                            <li> Women </li>
+                            <li> Zombies </li>
+                        </ul>
+
+                        <!-- Poll / Voting Section -->
+                        <div class="poll-box mt-5 rounded">
+                            <h6 class="text-white">Which genre do you play most?</h6>
+                            <form>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genrePoll" id="action" checked>
+                                    <label class="form-check-label text-white" for="action">Action</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genrePoll" id="rpg">
+                                    <label class="form-check-label text-white" for="rpg">RPG</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genrePoll" id="racing">
+                                    <label class="form-check-label text-white" for="racing">Racing</label>
+                                </div>
+                                <button type="submit" class="voting-submit-btn mt-2">Vote</button>
+                            </form>
+                        </div>
+
+                        <!-- Subscribe Section -->
+                        <div class="subscribe-box mt-5 text-white rounded">
+                            <h5 class="mb-2">Stay in the Loop</h5>
+                            <label class="form-label text-light">Get the latest game reviews & news updates</label>
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                                <button> Subscribe </button>
+                            </div>
+                        </div>
+
+                        <!-- Upcoming Releases -->
+                        <h5 class="mt-5">Upcoming Releases</h5>
+                        <ul class="list-group">
+
+                            <li class="list-group-item text-dark mt-3 p-2"
+                                style="background-color: transparent;border: none;">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <strong class="text-white">Eldoria Legends</strong>
+                                    <span class="badge text-dark pt-2">May 2025</span>
+                                </div>
+                                <small style="color: gray;"> A mythical RPG where you forge alliances, tame dragons, and
+                                    explore magical kingdoms in a vast open world.</small>
+                            </li>
+
+                            <li class="list-group-item text-dark mt-3 p-2"
+                                style="background-color: transparent;border: none;">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <strong class="text-white">Drift Fury X</strong>
+                                    <span class="badge text-dark pt-2">June 2025</span>
+                                </div>
+                                <small style="color: gray;">Push your limits on neon-lit tracks with insane drifting
+                                    mechanics and fully customizable cars.</small>
+                            </li>
+
+                            <li class="list-group-item text-dark mt-3 p-2"
+                                style="background-color: transparent;border: none;">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <strong class="text-white">Warzone Eclipse</strong>
+                                    <span class="badge text-dark pt-2">July 2025</span>
+                                </div>
+                                <small style="color: gray;">Experience next-gen FPS combat in war-torn cities with
+                                    real-time squad commands and destructible environments.</small>
+                            </li>
+
+                        </ul>
+
+                        <!-- Tags Section -->
+                        <h5 class="mt-5">Popular Tags</h5>
+                        <div class="tags">
+                            <span>Design</span>
+                            <span>Branding</span>
+                            <span>Art</span>
+                            <span>Developing</span>
+                            <span>CSS</span>
+                            <span>HTML</span>
+                            <span>Wordpress</span>
+                            <span>Photography</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-title pb-5">
+                <img src="image/logo.png" alt="">
+                <h1 class="ps-2 pt-3"> EMOZIN </h1>
+            </div>
+            <div class="row text-start px-2">
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">EXPLORE EMOZIN</div>
+                    <a href="#">Top Rated Games</a><br>
+                    <a href="#">New Releases</a><br>
+                    <a href="#">Game Walkthroughs</a><br>
+                    <a href="#">Multiplayer Arenas</a><br>
+                    <a href="#">Pro Tips & Tricks</a><br>
+                    <a href="#">EMOZIN Community</a>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">OVERVIEW</div>
+                    <a href="#">About</a><br>
+                    <a href="#">Contact</a><br>
+                    <a href="#">Terms of Use</a><br>
+                    <a href="#">Privacy Policy</a><br>
+                    <a href="#">Global Sitemap</a><br>
+                    <a href="#">Local Sitemap</a>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">COMMUNITY</div>
+                    <a href="#">Community Central</a><br>
+                    <a href="#">Support</a><br>
+                    <a href="#">Help</a><br>
+                    <a href="#">Do Not Sell My Info</a>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">ADVERTISE</div>
+                    <a href="#">Media Kit</a><br>
+                    <a href="#">Contact</a><br>
+                    <a href="#">Advertise with Us</a><br>
+                    <a href="#">Partnership Opportunities</a>
+                </div>
+
+                <div class="col-12 col-md-8 col-lg-4">
+                    <div class="fw-bold mb-1">EMOZIN APP</div>
+                    <p style="color: rgb(163, 158, 158);">Level up your gaming experience with EMOZIN – your one-stop
+                        platform for
+                        game guides, updates,
+                        and community battles. Never miss a drop, quest, or power-up!</p>
+
+                    <div class="app-icons mb-3">
+                        <img src="image/google-play-logo.png" alt="App Store">
+                        <img src="image/app-store-logo.png" alt="Google Play">
+                    </div>
+                    <div class="app-icons">
+                        <img src="image/google-play-logo.png" alt="App Store">
+                        <img src="image/app-store-logo.png" alt="Google Play">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 footer-social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="bike-animation">
+            <img src="image/footer-running-img.png" class="bike-img" alt="Bike">
+        </div>
+
+    </footer>
+
+    <script src="script.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"> </script>
+
+</body>
+
+</html>

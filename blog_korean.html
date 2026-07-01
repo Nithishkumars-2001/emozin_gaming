@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Blog </title>
+
+    <!--My css-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="image/logo.png" type="image/png">
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+    <!-- NavBar -->
+    <nav id="Navbar" class="navbar px-3 px-md-5 py-md-1">
+        <div class="website-name text-white">
+            <img src="image/logo.png" alt="">
+            <h2 class="logo-style ps-2"> EMOZIN SDN. BHD. </h2>
+        </div>
+
+        <div class="navbar-menu pe-5">
+            <ul class="navbar-menu-links">
+                <a href="home_korean.html">
+                    <li> 홈 </li>
+                </a>
+
+                <a href="About_korean.html">
+                    <li> 회사 소개 </li>
+                </a>
+
+                <a href="blog_korean.html">
+                    <li> 블로그 </li>
+                </a>
+
+                <a href="contact_korean.html">
+                    <li> 연락처 </li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="translate-container">
+            <a href="blog.html" style="text-decoration: none;">
+                <button class="translate-button pt-1">
+                    <i class="fa-solid fa-globe pe-1"></i> English
+                </button>
+            </a>
+        </div>
+
+
+        <div class="navbar-menu-toggle" onclick="shownavbar()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="blog-header">
+        <div class="blog-header-bg">
+            <img src="image/blog-header2.jpg" alt="Header Background" class="blog-bg-image">
+        </div>
+        <div class="blog-gaming-overlay"> </div>
+        <div class="blog-gaming-content">
+            <h1 class="gaming-title">우리 블로그에 오신 것을 환영합니다</h1>
+            <p>최신 게임 뉴스, 팁, 그리고 인사이트를 받아보세요. 게시글을 탐색하고 대화에 참여해 보세요!</p>
+        </div>
+    </header>
+
+    <!--Side Navbar-->
+    <aside class="side-navbar">
+        <p class="cross-symbol" onclick="closenavbar()"> <i class="fa fa-times" aria-hidden="true"></i> </p>
+
+        <div class="side-bar-log">
+            <img src="image/logo.png" alt="">
+            <h2 class="text-white pt-3"> EMOZIN </h2>
+        </div>
+
+        <div class="side-navbar-links pt-4">
+            <p class="side-navbar-link"> <a href="home_korean.html"> 홈 </a> </p>
+            <p class="side-navbar-link"> <a href="About_korean.html"> 회사 소개 </a> </p>
+            <p class="side-navbar-link"> <a href="blog_korean.html"> 블로그 </a> </p>
+            <p class="side-navbar-link"> <a href="contact_korean.html"> 연락처 </a> </p>
+
+            <div class="translate-container mt-5">
+                <a href="blog.html" style="text-decoration: none;">
+                    <button class="translate-button w-100 pt-1">
+                        <i class="fa-solid fa-globe pe-1"></i> English
+                    </button>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <section class="recent-blog-section">
+            <div class="container px-3 px-md-0 py-5">
+
+                <div class="row">
+                    <!-- Blog Content -->
+                    <div class="col-md-8">
+                        <h6 style="color: #00ffe1;">최근 블로그</h6>
+
+                        <div class="blog-post mb-5">
+                            <h4>데드 존: 최후의 도시를 방어하라</h4>
+                            <div class="meta">
+                                작성자: 관리자 | 날짜: 2025년 4월 22일 | 댓글
+                            </div>
+                            <img src="image/top-view-game1.jpg" alt="좀비 도시 게임 블로그" />
+                            <p class="mt-3">
+                                언데드가 마지막 남은 도시를 덮치며 혼돈이 퍼졌습니다. *데드 존*에서 당신은 인류의 마지막 희망으로서,
+                                감염된 거리와 무너지는 건물들을 헤치며 남은 생존자들을 지켜야 합니다.
+                            </p>
+                            <p>
+                                버려진 무기를 모아 무장하고, 바리케이드를 세우며, 생존자들을 이끌고 치열한 임무를 수행하세요. 파도처럼
+                                몰려오는 적, 으스스한 도시 환경, 그리고 협동 게임플레이로 이 좀비 서바이벌 게임은 마지막 순간까지
+                                당신의 심장을 뛰게 할 것입니다.
+                            </p>
+                            <a href="#" class="text-decoration-none">더 보기...</a>
+                        </div>
+
+                        <!-- Blog Post -->
+                        <div class="blog-post mb-5">
+                            <h4>엘도리아의 심연을 탐험하다: 환상의 세계가 기다린다</h4>
+                            <div class="meta">
+                                작성자: 게임존 | 날짜: 2025년 4월 24일 | 댓글
+                            </div>
+                            <img src="image/recent-blog-img.jpg" alt="판타지 RPG 게임 블로그" />
+                            <p class="mt-3">
+                                엘도리아로 뛰어드세요 — 고대 용이 날고, 왕국이 충돌하며, 전설이 탄생하는 신화적인 세계. 이 RPG 명작은
+                                오픈 월드 탐험과 깊이 있는 스토리텔링, 그리고 놀라운 비주얼을 결합했습니다.
+                            </p>
+                            <p>
+                                장대한 보스전부터 마법 숲 곳곳의 숨겨진 퀘스트까지, 당신의 모든 선택이 운명을 결정합니다. 솔로 탐험가든,
+                                협동 모드에서 친구와 함께하든, 엘도리아는 그 어떤 판타지 경험보다 특별합니다.
+                            </p>
+                            <a href="#" class="text-decoration-none">더 보기...</a>
+                        </div>
+
+                        <!-- Blog Post -->
+                        <div class="blog-post mb-5">
+                            <h4>팬텀 트랙스: 유령 열차의 대결</h4>
+                            <div class="meta">
+                                작성자: 레일레이지 | 날짜: 2025년 4월 18일 | 댓글(27)
+                            </div>
+                            <img src="image/news-mini2.jpg" alt="유령 열차 경주 블로그" />
+                            <p class="mt-3">
+                                선로는 유령에 의해 지배되고, 경주는 실제입니다. *팬텀 트랙스*는 피로 물든 달빛 아래 저주받은 철도를 질주하는
+                                유령 열차 간의 고속 대결로 당신을 초대합니다.
+                            </p>
+                            <p>
+                                유령이 출몰하는 터널을 드리프트하고, 초자연적인 함정을 피해 경쟁 열차를 앞지르세요. 각 바퀴마다 더 치열해지는
+                                레이스에서, 오직 가장 용감한 기관사만이 결승선을 통과하고 악몽에서 벗어날 수 있습니다.
+                            </p>
+                            <a href="#" class="text-decoration-none">더 보기...</a>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Sidebar -->
+                    <div class="col-md-4 blog-sidebar">
+                        <h5>카테고리</h5>
+                        <ul>
+                            <li> 액션 </li>
+                            <li> 배틀로얄 </li>
+                            <li> 바이크 </li>
+                            <li> 자동차 레이싱 </li>
+                            <li> 판타지 </li>
+                            <li> 글러브 </li>
+                            <li> 공포 </li>
+                            <li> 멀티플레이어 </li>
+                            <li> 오픈 월드 </li>
+                            <li> 롤플레잉 게임 </li>
+                            <li> 슈팅 </li>
+                            <li> 스포츠 </li>
+                            <li> 스타일 </li>
+                            <li> 서바이벌 </li>
+                            <li> 레슬링 </li>
+                            <li> 감시자 </li>
+                            <li> 여성 </li>
+                            <li> 좀비 </li>
+                        </ul>
+
+                        <!-- Poll / Voting Section -->
+                        <div class="poll-box mt-5 rounded">
+                            <h6 class="text-white">가장 자주 플레이하는 장르는 무엇인가요?</h6>
+                            <form>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genrePoll" id="action" checked>
+                                    <label class="form-check-label text-white" for="action">액션</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genrePoll" id="rpg">
+                                    <label class="form-check-label text-white" for="rpg">RPG</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genrePoll" id="racing">
+                                    <label class="form-check-label text-white" for="racing">레이싱</label>
+                                </div>
+                                <button type="submit" class="voting-submit-btn mt-2">투표하기</button>
+                            </form>
+                        </div>
+
+                        <!-- Subscribe Section -->
+                        <div class="subscribe-box mt-5 text-white rounded">
+                            <h5 class="mb-2">최신 정보를 받아보세요</h5>
+                            <label class="form-label text-light">최신 게임 리뷰와 뉴스 업데이트를 받아보세요</label>
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="이메일을 입력하세요">
+                                <button> 구독하기 </button>
+                            </div>
+                        </div>
+
+                        <!-- Upcoming Releases -->
+                        <h5 class="mt-5">다가오는 출시작</h5>
+                        <ul class="list-group">
+
+                            <li class="list-group-item text-dark mt-3 p-2"
+                                style="background-color: transparent;border: none;">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <strong class="text-white">엘도리아 전설</strong>
+                                    <span class="badge text-dark pt-2">2025년 5월</span>
+                                </div>
+                                <small style="color: gray;">고대 용을 길들이고 동맹을 맺으며, 넓은 오픈 월드에서 마법의 왕국을 탐험하는 신화적인
+                                    RPG입니다.</small>
+                            </li>
+
+                            <li class="list-group-item text-dark mt-3 p-2"
+                                style="background-color: transparent;border: none;">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <strong class="text-white">드리프트 퓨리 X</strong>
+                                    <span class="badge text-dark pt-2">2025년 6월</span>
+                                </div>
+                                <small style="color: gray;">네온 불빛이 반짝이는 트랙에서 미친 드리프트 기술과 완전히 커스터마이즈 가능한 차량으로 한계를
+                                    도전하세요.</small>
+                            </li>
+
+                            <li class="list-group-item text-dark mt-3 p-2"
+                                style="background-color: transparent;border: none;">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <strong class="text-white">워존 이클립스</strong>
+                                    <span class="badge text-dark pt-2">2025년 7월</span>
+                                </div>
+                                <small style="color: gray;">전쟁으로 폐허가 된 도시에서 실시간 팀 명령과 파괴 가능한 환경을 통해 차세대 FPS 전투를
+                                    경험하세요.</small>
+                            </li>
+
+                        </ul>
+
+                        <!-- Tags Section -->
+                        <h5 class="mt-5">인기 태그</h5>
+                        <div class="tags">
+                            <span>디자인</span>
+                            <span>브랜딩</span>
+                            <span>아트</span>
+                            <span>개발</span>
+                            <span>CSS</span>
+                            <span>HTML</span>
+                            <span>워드프레스</span>
+                            <span>사진</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-title pb-5">
+                <img src="image/logo.png" alt="">
+                <h1 class="ps-2 pt-3">EMOZIN</h1>
+            </div>
+            <div class="row text-start px-2">
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">EMOZIN 탐색</div>
+                    <a href="#">최고 평점 게임</a><br>
+                    <a href="#">신규 출시</a><br>
+                    <a href="#">게임 공략</a><br>
+                    <a href="#">멀티플레이어 아레나</a><br>
+                    <a href="#">프로 팁 & 트릭</a><br>
+                    <a href="#">EMOZIN 커뮤니티</a>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">개요</div>
+                    <a href="#">소개</a><br>
+                    <a href="#">연락처</a><br>
+                    <a href="#">이용 약관</a><br>
+                    <a href="#">개인정보 보호정책</a><br>
+                    <a href="#">전 세계 사이트맵</a><br>
+                    <a href="#">지역 사이트맵</a>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">커뮤니티</div>
+                    <a href="#">커뮤니티 센터</a><br>
+                    <a href="#">지원</a><br>
+                    <a href="#">도움말</a><br>
+                    <a href="#">내 정보 판매 금지</a>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">광고</div>
+                    <a href="#">미디어 키트</a><br>
+                    <a href="#">연락처</a><br>
+                    <a href="#">광고하기</a><br>
+                    <a href="#">파트너십 기회</a>
+                </div>
+
+                <div class="col-12 col-md-8 col-lg-4">
+                    <div class="fw-bold mb-1">EMOZIN 앱</div>
+                    <p style="color: rgb(163, 158, 158);">EMOZIN으로 게임 경험을 향상시키세요 – 게임 가이드, 업데이트, 커뮤니티 배틀을 위한 원스톱 플랫폼입니다.
+                        아이템 드롭, 퀘스트, 파워업을 놓치지 마세요!</p>
+
+                    <div class="app-icons mb-3">
+                        <img src="image/google-play-logo.png" alt="App Store">
+                        <img src="image/app-store-logo.png" alt="Google Play">
+                    </div>
+                    <div class="app-icons">
+                        <img src="image/google-play-logo.png" alt="App Store">
+                        <img src="image/app-store-logo.png" alt="Google Play">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 footer-social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="bike-animation">
+            <img src="image/footer-running-img.png" class="bike-img" alt="Bike">
+        </div>
+
+    </footer>
+
+    <script src="script.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"> </script>
+
+</body>
+
+</html>

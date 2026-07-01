@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> EMOZIN </title>
+
+    <!--My css-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="image/logo.png" type="image/png">
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <nav id="Navbar" class="navbar px-3 px-md-5 py-md-1">
+        <div class="website-name text-white">
+            <img src="image/logo.png" alt="">
+            <h2 class="logo-style ps-2"> EMOZIN SDN. BHD. </h2>
+        </div>
+
+        <div class="navbar-menu pe-5">
+            <ul class="navbar-menu-links">
+                <a href="home.html">
+                    <li> Home </li>
+                </a>
+
+                <a href="About.html">
+                    <li> About US</li>
+                </a>
+
+                <a href="blog.html">
+                    <li> Blog </li>
+                </a>
+
+                <a href="contact.html">
+                    <li> Contact </li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="translate-container">
+            <a href="home_korean.html" style="text-decoration: none;">
+                <button class="translate-button pt-1">
+                    <i class="fa-solid fa-globe pe-1"></i> Korean
+                </button>
+            </a>
+        </div>
+
+
+        <div class="navbar-menu-toggle" onclick="shownavbar()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="gaming-header" id="gamingHeader">
+        <div class="gaming-header-bg">
+            <img src="image/header-bg.png" alt="Header Background" class="bg-image" id="bgImage">
+        </div>
+        <div class="gaming-overlay"></div>
+        <div class="gaming-content">
+            <h1 class="gaming-title" id="headerTitle"><i class="fa-solid fa-gun me-3"></i>TRIGGER MAFIA</h1>
+            <p class="gaming-tagline" id="headerTagline">Gear Up. Squad Up. Dominate the Arena.</p>
+            <div class="header-btn">
+                <a href="#" class="btn-custom"> <i class="fa-solid fa-gamepad"></i> Play Now </a>
+                <a href="#" class="btn-custom"> <i class="fa-solid fa-cart-shopping"></i> Buy Now</a>
+            </div>
+        </div>
+
+        <div class="carousel-dots text-center">
+            <button class="dot-button active" onclick="changeHeader(0)"></button>
+            <button class="dot-button" onclick="changeHeader(1)"></button>
+            <button class="dot-button" onclick="changeHeader(2)"></button>
+        </div>
+    </header>
+
+    <!--Side Navbar-->
+    <aside class="side-navbar">
+        <p class="cross-symbol" onclick="closenavbar()"> <i class="fa fa-times" aria-hidden="true"></i> </p>
+
+        <div class="side-bar-log">
+            <img src="image/logo.png" alt="">
+            <h2 class="text-white pt-3"> EMOZIN </h2>
+        </div>
+
+        <div class="side-navbar-links pt-4">
+            <p class="side-navbar-link"> <a href="home.html"> Home </a> </p>
+            <p class="side-navbar-link"> <a href="About.html"> About </a> </p>
+            <p class="side-navbar-link"> <a href="blog.html"> Blog </a> </p>
+            <p class="side-navbar-link"> <a href="contact"> Contact </a> </p>
+
+            <div class="translate-container mt-5">
+                <a href="home_korean.html">
+                    <button class="translate-button w-100 pt-1">
+                        <i class="fa-solid fa-globe pe-1"></i> Korean
+                    </button>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="home-main-section">
+        <!-- Watch Trailer -->
+        <section class="dangerzone-section d-flex align-items-center px-md-5" style="position: relative;">
+
+            <video autoplay loop muted plays-inline id="bg-clip">
+                <source src="video/watch-trailer-bg.mp4" type="video/mp4">
+            </video>
+
+            <img src="image/jet2.png" alt="Jet" class="jet-animation">
+            <img src="image/jet1.png" alt="Jet Animation" class="jet-animation-two">
+
+            <div class="container-fluid">
+                <div class="row align-items-center">
+
+                    <!-- left Side-->
+                    <div class="watch-trailer-content col-md-6 text-white py-md-5 px-md-5"
+                        style="background-color: transparent;">
+                        <div class="container">
+                            <h1 class="display-4 fw-bold text-center">WELCOME TO <br><span
+                                    style="color: #00ffe1;">WARZONE: X</span></h1>
+                            <p class="lead mt-4 px-2" style="text-align: justify;">
+                                Gear up, soldier — WARZONE: X is a next-gen combat simulation where tactical warfare
+                                meets brutal intensity.
+                                In this high-tech battlefield, drones strike, squads clash, and only the most skilled
+                                will survive.
+                                Command your unit, upgrade your arsenal, and outwit enemies across hostile zones torn by
+                                chaos.
+                                Your mission: eliminate threats and dominate the warzone. Are you prepared for the
+                                ultimate frontline experience.
+                            </p>
+
+                            <div class="header-btn mt-4">
+                                <a href="#" class="btn-custom" id="watch-trailer-btn">
+                                    <i class="fa-solid fa-video pe-2"></i> WATCH TRAILER
+                                </a>
+                                <a href="#" class="btn-custom" id="download-btn">
+                                    <i class="fa-solid fa-download pe-2"></i> DOWNLOAD
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right side -->
+                    <div class="watch-trailer-banner col-md-6 text-center py-5">
+                        <div class="container">
+                            <img src="image/watch-trailer2-section.png" alt="Sci-fi Character"
+                                class="img-fluid futuristic-img">
+                        </div>
+                    </div> 
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Trending Now -->
+        <section class="trending-now">
+            <div class="container-fluid px-md-5 py-5">
+                <div class="row row-gap-custom">
+                    <!-- Trending Now Section -->
+                    <div class="col-lg-9">
+                        <div class="container">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="section-title">TRENDING NOW</div>
+                                <a href="#" class="text-white text-decoration-none">VIEW ALL →</a>
+                            </div>
+
+                            <div class="row g-4">
+
+                                <div class="col-md-6 col-xl-4">
+                                    <a href="Games/snake_game.html" style="text-decoration: none;">
+                                        <div class="anime-card position-relative">
+                                            <div class="episode-badge">Level 12+</div>
+                                            <img src="image/trending-game1.png" alt="game poster">
+                                            <div class="anime-info">
+                                                <span class="tag">Action</span>
+                                                <span class="tag">Multiplayer</span>
+                                                <div class="mt-2 fw-bold text-white"> Cyberpunk 2077: Phantom Liberty
+                                                </div>
+                                                <div class="view-count mt-1">🐍 5.8k Players</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <a href="Games/Tic-Tac_game.html" style="text-decoration: none;">
+                                        <div class="anime-card position-relative">
+                                            <div class="episode-badge">Classic Fun</div>
+                                            <img src="image/trending-game2.png" alt="Tic-Tac-Toe game poster">
+                                            <div class="anime-info">
+                                                <span class="tag">Puzzle</span>
+                                                <span class="tag">Multiplayer</span>
+                                                <div class="mt-2 fw-bold text-white"> Tic-Tac-Toe: Battle of X & O
+                                                </div>
+                                                <div class="view-count mt-1">🎮 25.4k Players</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <a href="Games/ghost_game.html" style="text-decoration: none;">
+                                        <div class="anime-card position-relative">
+                                            <div class="episode-badge">Level 10+</div>
+                                            <img src="image/trending-game3.png" alt="game poster">
+                                            <div class="anime-info">
+                                                <span class="tag">Adventure</span>
+                                                <span class="tag">Single Player</span>
+                                                <div class="mt-2 fw-bold text-white"> Ghost Flying Game: Haunted Skies
+                                                </div>
+                                                <div class="view-count mt-1">👻 32.5k Players</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <a href="Games/memory_flip_game.html" style="text-decoration: none;">
+                                        <div class="anime-card position-relative">
+                                            <div class="episode-badge">Memory Flip Game</div>
+                                            <img src="image/trending-game4.png" alt="game poster">
+                                            <div class="anime-info">
+                                                <span class="tag">Puzzle</span>
+                                                <span class="tag">Memory</span>
+                                                <div class="mt-2 fw-bold text-white"> Memory Flip </div>
+                                                <div class="view-count mt-1">🔥 20.3k Players</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="anime-card position-relative">
+                                        <div class="episode-badge">Campaign</div>
+                                        <img src="image/trending-game5.jpg" alt="Operation Groundzero poster">
+                                        <div class="anime-info">
+                                            <span class="tag">Shooter</span>
+                                            <span class="tag">Story Mode</span>
+                                            <div class="mt-2 fw-bold text-white"> OPERATION GROUNDZERO </div>
+                                            <div class="view-count mt-1">🔥 42.8k Players</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="anime-card position-relative">
+                                        <div class="episode-badge">Online PvP</div>
+                                        <img src="image/trending-game6.png" alt="game poster">
+                                        <div class="anime-info">
+                                            <span class="tag">Battle Royale</span>
+                                            <span class="tag">Mobile</span>
+                                            <div class="mt-2 fw-bold text-white"> The Last of Us Part I (PC Remake)
+                                            </div>
+                                            <div class="view-count mt-1">🔥 65.9k Players</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="anime-card position-relative">
+                                        <div class="episode-badge">Adventure</div>
+                                        <img src="image/trending-game7.jpg" alt="game poster">
+                                        <div class="anime-info">
+                                            <span class="tag">Open World</span>
+                                            <span class="tag">Fantasy</span>
+                                            <div class="mt-2 fw-bold text-white"> Speedline Fury </div>
+                                            <div class="view-count mt-1">🔥 22.3k Players</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="anime-card position-relative">
+                                        <div class="episode-badge">Multiplayer</div>
+                                        <img src="image/trending-game8.jpg" alt="game poster">
+                                        <div class="anime-info">
+                                            <span class="tag">Battle Royale</span>
+                                            <span class="tag">Creative</span>
+                                            <div class="mt-2 fw-bold text-white">ASHEN VOW: BLOODFIELDS</div>
+                                            <div class="view-count mt-1">🔥 88.5k Players</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="anime-card position-relative">
+                                        <div class="episode-badge">Survival Mode</div>
+                                        <img src="image/trending-game9.jpg" alt="game poster">
+                                        <div class="anime-info">
+                                            <span class="tag">Sandbox</span>
+                                            <span class="tag">Creative</span>
+                                            <div class="mt-2 fw-bold text-white">Boundaryline: Heart of the Game </div>
+                                            <div class="view-count mt-1">🔥 74.6k Players</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Views Section -->
+                    <div class="col-lg-3">
+                        <div class="container">
+                            <div class="section-title"> TOP VIEWS </div>
+                            <div class="d-flex flex-column gap-3 top-views pt-4">
+                                <div class="card">
+                                    <div class="episode-badge">Warzone / Next-Gen</div>
+                                    <img src="image/top-view-game1.jpg" class="card-img-top" alt="Battlefield 2042">
+                                    <div class="card-body">
+                                        <p class="card-text"> The Warlord Rises </p>
+                                        <p class="view-count">🔥 33.7k Players Online</p>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="episode-badge">Battle Royale</div>
+                                    <img src="image/top-view-game2.jpg" class="card-img-top" alt="Apex Legends">
+                                    <div class="card-body">
+                                        <p class="card-text"> FiveForce: Protectors of the City </p>
+                                        <p class="view-count">🔥 38.2k Players Online</p>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="episode-badge">Tactical Shooter</div>
+                                    <img src="image/top-view-game3.jpg" class="card-img-top" alt="Valorant">
+                                    <div class="card-body">
+                                        <p class="card-text">Eclipse Legion</p>
+                                        <p class="view-count">🔥 52.9k Players Online</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News & Updates-->
+        <section class="news-updates">
+            <div class="container-fluid px-md-5 py-5">
+                <div class="row">
+                    <!-- Left Column -->
+                    <div class="col-lg-9">
+                        <div class="container">
+                            <h5 class="fw-bold mb-4" style="color: #00ffe1;">NEWS & UPDATE</h5>
+                            <div class="row g-3">
+                                <!-- Featured Post -->
+                                <div class="col-md-6">
+                                    <div class="position-relative featured-post">
+                                        <img src="image/news-feature1.jpg" class="img-fluid" alt="">
+                                        <span class="badge text-dark position-absolute top-0 start-0 m-2">Reviews</span>
+                                        <div
+                                            class="position-absolute bottom-0 p-3 text-white bg-dark bg-opacity-50 w-100">
+                                            <p class="mb-1 fw-bold"> "PHANTOM CORE: REDEMPTION" SET TO LAUNCH WORLDWIDE
+                                                ON SEPTEMBER 15, 2025 </p>
+                                            <small class="text-white">by Admin · Aug 01, 2025 · 💬 26</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="position-relative featured-post">
+                                        <img src="image/news-feature2.jpg" class="img-fluid" alt="">
+                                        <span class="badge text-dark position-absolute top-0 start-0 m-2">Reviews</span>
+                                        <div
+                                            class="position-absolute bottom-0 p-3 text-white bg-dark bg-opacity-50 w-100">
+                                            <p class="mb-1 fw-bold">
+                                                "POWERPLAY X" BLASTS ONTO NEXT-GEN CONSOLES THIS NOVEMBER 10, 2025
+                                            </p>
+                                            <small class="text-white">by Admin · Sep 22, 2025 · 💬 34</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Mini posts -->
+                                <div class="col-md-4" * 3>
+                                    <div class="position-relative mini-post">
+                                        <img src="image/news-mini1.jpg" class="img-fluid" alt="">
+                                        <span class="badge text-dark position-absolute top-0 start-0 m-2">Reviews</span>
+                                        <div class="bg-dark text-white p-2">
+                                            <p class="mb-0 small" style="text-transform: uppercase;"> "Battlecore:
+                                                Downfall" and "Warfleet Tactics" are expanding to new consoles
+                                                worldwide. </p>
+                                            <small class="text-white">Aug 01, 2019 · 💬 20</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Mini posts -->
+                                <div class="col-md-4" * 3>
+                                    <div class="position-relative mini-post">
+                                        <img src="image/news-mini2.jpg" class="img-fluid" alt="">
+                                        <span class="badge text-dark position-absolute top-0 start-0 m-2">Reviews</span>
+                                        <div class="bg-dark text-white p-2">
+                                            <p class="mb-0 small"> RAIL RUSH SALE 2026 IS LIVE – TOP TRAIN RACING GAMES
+                                                UNDER ₹500! </p>
+                                            <small class="text-white">Aug 05, 2019 · 👁️ 56 Views</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Mini posts -->
+                                <div class="col-md-4" * 3>
+                                    <div class="position-relative mini-post">
+                                        <img src="image/news-mini3.jpg" class="img-fluid" alt="">
+                                        <span class="badge text-dark position-absolute top-0 start-0 m-2">Reviews</span>
+                                        <div class="bg-dark text-white p-2">
+                                            <p class="mb-0 small mt-1">
+                                                🤖 MECH MARCH SALE 2026 IS LIVE – TOP ROBOT WAR GAMES UNDER ₹500!
+                                            </p>
+                                            <small class="text-white">🕒 Aug 20, 2026 · 👁️ 120 · 💬 50</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="col-lg-3 pt-2">
+                        <div class="container">
+                            <div class="mb-4">
+                                <h6 class="fw-bold pt-4 pt-md-0" style="color: #00ffe1;">SOCIAL MEDIA</h6>
+                                <div class="d-grid gap-3 pt-3">
+                                    <button class="btn btn-dark text-start social-btn">
+                                        <i class="fa-brands fa-facebook-f pe-2"></i> Facebook
+                                        <span class="float-end">1.2k Follow</span>
+                                    </button>
+                                    <button class="btn btn-dark text-start social-btn">
+                                        <i class="fa-brands fa-x-twitter pe-2"></i> Twitter
+                                        <span class="float-end">1.2k Follow</span>
+                                    </button>
+                                    <button class="btn btn-dark text-start social-btn">
+                                        <i class="fa-brands fa-youtube pe-2"></i> Youtube
+                                        <span class="float-end">1.2k Follow</span>
+                                    </button>
+                                    <button class="btn btn-dark text-start social-btn">
+                                        <i class="fa-brands fa-instagram pe-2"></i> Instagram
+                                        <span class="float-end">2.6k Follow</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="hardware-guides">
+                                <h6 class="fw-bold" style="color: #00ffe1;">HARDWARE GUIDES</h6>
+                                <ul class="list-unstyled pt-2">
+                                    <li class="d-flex gap-2 mb-3">
+                                        <img src="image/trending-game5.jpg" alt="" width="70" height="70"
+                                            class="img-thumbnail">
+                                        <div class="text-white ps-2">
+                                            <p class="mb-0 small"> 🏏 A CRICKET FEVER POSTER GOT HIJACKED FOR A STADIUM
+                                                DJ NIGHT... </p>
+                                            <small>Aug 01, 2019 · 💬 12</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex gap-2 mb-3">
+                                        <img src="image/header-bg2.png" alt="" width="70" height="70"
+                                            class="img-thumbnail">
+                                        <div class="text-white ps-2">
+                                            <p class="mb-0 small"> 🏎️ A STREET RACING POSTER GOT HIJACKED FOR A DRIFT
+                                                PARTY INVITE...
+                                            </p>
+                                            <small>Aug 01, 2019 · 💬 12</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex gap-2 mb-3">
+                                        <img src="image/header-bg3.jpg" alt="" width="70" height="70"
+                                            class="img-thumbnail">
+                                        <div class="text-white ps-2">
+                                            <p class="mb-0 small"> 👽 AN ALIEN INVASION POSTER GOT HIJACKED FOR AN
+                                                INTERGALACTIC RAVE...
+                                            </p>
+                                            <small>Aug 01, 2019 · 💬 12</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex gap-2 mb-3">
+                                        <img src="image/top-view-game1.jpg" alt="" width="70" height="70"
+                                            class="img-thumbnail ps-2">
+                                        <div class="text-white">
+                                            <p class="mb-0 small">🎖️ AN ARMY RECRUITMENT POSTER GOT HIJACKED FOR A
+                                                WARGAME TOURNAMENT...
+                                            </p>
+                                            <small>Aug 01, 2019 · 💬 12</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex gap-2 mb-3">
+                                        <img src="image/header-bg.png" alt="" width="70" height="70"
+                                            class="img-thumbnail">
+                                        <div class="text-white ps-2">
+                                            <p class="mb-0 small"> 🔫 A TARGET PRACTICE POSTER GOT HIJACKED FOR A REAL
+                                                COMBAT ZONE ALERT...
+                                            </p>
+                                            <small>Aug 01, 2019 · 💬 12</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex gap-2 mb-3">
+                                        <img src="image/top-view-game3.jpg" alt="" width="70" height="70"
+                                            class="img-thumbnail">
+                                        <div class="text-white ps-2">
+                                            <p class="mb-0 small">🌌 AN ALIEN CITY TOUR POSTER GOT HIJACKED FOR A
+                                                PLANETARY SURVIVAL MISSION...
+                                            </p>
+                                            <small>Aug 01, 2019 · 💬 12</small>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tournament Section -->
+        <section class="tournament-section py-md-5 py-3">
+            <div class="container-fluid full-section">
+
+                <div class="row align-items-center px-md-5">
+
+                    <div class="col-12 col-md-6 col-lg-3 img-col1">
+                        <img src="image/tournament-img.png" alt="Image 1">
+                    </div>
+
+                    <!-- Tournament Box -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="tournament-box mt-2 mt-md-0">
+                            <span class="badge bg-danger badge-position">TOURNAMENTS</span>
+                            <h5 class="pt-3">World Of WarCraft</h5>
+                            <p><strong>Tournament Begins:</strong> <span>June 20, 2018</span></p>
+                            <p><strong>Tournament Ends:</strong> <span>July 01, 2018</span></p>
+                            <p><strong>Participants:</strong> <span>10 teams</span></p>
+                            <p><strong>Tournament Author:</strong> <span>Admin</span></p>
+                            <p><strong class="text-warning">Prizes:</strong> 1st: $2000, 2nd: $1000, 3rd: $500</p>
+                        </div>
+                    </div>
+
+                    <!-- Premium Tournament Box -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="tournament-box mt-4 mt-md-0">
+                            <span class="badge bg-warning text-dark badge-position">PREMIUM TOURNAMENT</span>
+                            <h5 class="pt-3">DOOM</h5>
+                            <p><strong>Tournament Begins:</strong> <span>June 20, 2018</span></p>
+                            <p><strong>Tournament Ends:</strong> <span>July 01, 2018</span></p>
+                            <p><strong>Participants:</strong> <span>10 teams</span></p>
+                            <p><strong>Tournament Author:</strong> <span>Admin</span></p>
+                            <p><strong class="text-warning">Prizes:</strong> 1st: $2000, 2nd: $1000, 3rd: $500</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3 img-col2">
+                        <img src="image/tournament-img.png" alt="Image 1">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-title pb-5">
+                <img src="image/logo.png" alt="">
+                <h1 class="ps-2 pt-3"> EMOZIN </h1>
+            </div>
+            <div class="row text-start px-2">
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">EXPLORE EMOZIN</div>
+                    <a href="#">Top Rated Games</a><br>
+                    <a href="#">New Releases</a><br>
+                    <a href="#">Game Walkthroughs</a><br>
+                    <a href="#">Multiplayer Arenas</a><br>
+                    <a href="#">Pro Tips & Tricks</a><br>
+                    <a href="#">EMOZIN Community</a>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">OVERVIEW</div>
+                    <a href="#">About</a><br>
+                    <a href="#">Contact</a><br>
+                    <a href="#">Terms of Use</a><br>
+                    <a href="#">Privacy Policy</a><br>
+                    <a href="#">Global Sitemap</a><br>
+                    <a href="#">Local Sitemap</a>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">COMMUNITY</div>
+                    <a href="#">Community Central</a><br>
+                    <a href="#">Support</a><br>
+                    <a href="#">Help</a><br>
+                    <a href="#">Do Not Sell My Info</a>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">ADVERTISE</div>
+                    <a href="#">Media Kit</a><br>
+                    <a href="#">Contact</a><br>
+                    <a href="#">Advertise with Us</a><br>
+                    <a href="#">Partnership Opportunities</a>
+                </div>
+
+                <div class="col-12 col-md-8 col-lg-4">
+                    <div class="fw-bold mb-1">EMOZIN APP</div>
+                    <p style="color: rgb(163, 158, 158);">Level up your gaming experience with EMOZIN – your one-stop
+                        platform for
+                        game guides, updates,
+                        and community battles. Never miss a drop, quest, or power-up!</p>
+
+                    <div class="app-icons mb-3">
+                        <img src="image/google-play-logo.png" alt="App Store">
+                        <img src="image/app-store-logo.png" alt="Google Play">
+                    </div>
+                    <div class="app-icons">
+                        <img src="image/google-play-logo.png" alt="App Store">
+                        <img src="image/app-store-logo.png" alt="Google Play">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 footer-social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="bike-animation">
+            <img src="image/footer-running-img.png" class="bike-img" alt="Bike">
+        </div>
+
+    </footer>
+
+    <script src="script.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"> </script>
+
+</body>
+
+</html>

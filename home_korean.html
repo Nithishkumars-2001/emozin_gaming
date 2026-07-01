@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> EMOZIN </title>
+
+    <!--My css-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="image/logo.png" type="image/png">
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+    <!-- NavBar -->
+    <nav id="Navbar" class="navbar px-3 px-md-5 py-md-1">
+        <div class="website-name text-white">
+            <img src="image/logo.png" alt="">
+            <h2 class="logo-style ps-2"> EMOZIN SDN. BHD. </h2>
+        </div>
+
+        <div class="navbar-menu pe-5">
+            <ul class="navbar-menu-links">
+                <a href="home_korean.html">
+                    <li> 홈 </li>
+                </a>
+
+                <a href="About_korean.html">
+                    <li> 회사 소개 </li>
+                </a>
+
+                <a href="blog_korean.html">
+                    <li> 블로그 </li>
+                </a>
+
+                <a href="contact_korean.html">
+                    <li> 연락처 </li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="translate-container">
+            <a href="home.html" style="text-decoration: none;">
+                <button class="translate-button pt-1">
+                    <i class="fa-solid fa-globe pe-1"></i> English
+                </button>
+            </a>
+        </div>
+
+
+        <div class="navbar-menu-toggle" onclick="shownavbar()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="gaming-header" id="gamingHeader">
+        <div class="gaming-header-bg">
+            <img src="image/header-bg.png" alt="Header Background" class="bg-image" id="bgImage">
+        </div>
+        <div class="gaming-overlay"></div>
+        <div class="gaming-content">
+            <h1 class="gaming-title" id="headerTitle"><i class="fa-solid fa-gun me-3"></i>트리거 마피아</h1>
+            <p class="gaming-tagline" id="headerTagline"> 장비를 갖춰라. 팀을 모아라. 전장을 지배하라. </p>
+            <div class="header-btn">
+                <a href="#" class="btn-custom"> <i class="fa-solid fa-gamepad"></i> 지금 시작 </a>
+                <a href="#" class="btn-custom"> <i class="fa-solid fa-cart-shopping"></i> 지금 구매 </a>
+            </div>
+        </div>
+    </header>
+
+    <!--Side Navbar-->
+    <aside class="side-navbar">
+        <p class="cross-symbol" onclick="closenavbar()"> <i class="fa fa-times" aria-hidden="true"></i> </p>
+
+        <div class="side-bar-log">
+            <img src="image/logo.png" alt="">
+            <h2 class="text-white pt-3"> EMOZIN </h2>
+        </div>
+
+        <div class="side-navbar-links pt-4">
+            <p class="side-navbar-link"> <a href="home_korean.html"> 홈 </a> </p>
+            <p class="side-navbar-link"> <a href="About_korean.html"> 회사 소개 </a> </p>
+            <p class="side-navbar-link"> <a href="blog_korean.html"> 블로그 </a> </p>
+            <p class="side-navbar-link"> <a href="contact_korean.html"> 연락처 </a> </p>
+
+            <div class="translate-container mt-5">
+                <a href="home.html" style="text-decoration: none;">
+                    <button class="translate-button w-100 pt-1">
+                        <i class="fa-solid fa-globe pe-1"></i> English
+                    </button>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="home-main-section">
+
+        <!-- Watch Trailer -->
+        <section class="dangerzone-section d-flex align-items-center px-md-5" style="position: relative;">
+
+            <video autoplay loop muted plays-inline id="bg-clip">
+                <source src="video/watch-trailer-bg.mp4" type="video/mp4">
+            </video>
+
+            <img src="image/jet2.png" alt="Jet" class="jet-animation">
+            <img src="image/jet1.png" alt="Jet Animation" class="jet-animation-two">
+
+            <div class="container-fluid">
+                <div class="row align-items-center">
+
+                    <div class="watch-trailer-content col-md-6 text-white py-md-5 px-md-5"
+                        style="background-color: transparent;">
+                        <div class="container">
+                            <h1 class="display-4 fw-bold text-center">환영합니다 <br><span style="color: #00ffe1;">WARZONE:
+                                    X</span></h1>
+                            <p class="lead mt-4 px-2" style="text-align: justify;">
+                                준비하세요, 병사여 — WARZONE: X는 차세대 전투 시뮬레이션으로, 전술 전쟁과 극한의 강렬함이 만나는 곳입니다.
+                                이 첨단 전장에서는 드론이 공격하고, 분대가 충돌하며, 오직 가장 숙련된 자만이 살아남을 수 있습니다.
+                                부대를 지휘하고, 무기를 업그레이드하며, 혼돈으로 찢긴 적대 구역에서 적을 능가하세요.
+                                당신의 임무: 위협을 제거하고 전장을 지배하라. 궁극의 최전선 전투를 준비되었습니까?
+                            </p>
+                            <div class="header-btn mt-4">
+                                <a href="#" class="btn-custom"> <i class="fa-solid fa-video pe-2"></i> 예고편 보기 </a>
+                                <a href="#" class="btn-custom"> <i class="fa-solid fa-download pe-2"></i> 다운로드 </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="watch-trailer-banner col-md-6 text-center py-5">
+                        <div class="container">
+                            <img src="image/watch-trailer2-section.png" alt="공상과학 캐릭터" class="img-fluid futuristic-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Trending Now -->
+        <section class="trending-now">
+            <div class="container-fluid px-md-5 py-5">
+                <div class="row row-gap-custom">
+                    <!-- 지금 인기 게임 섹션 -->
+                    <div class="col-lg-9">
+                        <div class="container">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="section-title">지금 인기</div>
+                                <a href="#" class="text-white text-decoration-none">전체 보기 →</a>
+                            </div>
+
+                            <div class="row g-4">
+
+                                <div class="col-md-6 col-xl-4">
+                                    <a href="Games/snake_game.html" style="text-decoration: none;">
+                                        <div class="anime-card position-relative">
+                                            <div class="episode-badge">레벨 12+</div>
+                                            <img src="image/trending-game1.png" alt="게임 포스터">
+                                            <div class="anime-info">
+                                                <span class="tag">액션</span>
+                                                <span class="tag">멀티플레이어</span>
+                                                <div class="mt-2 fw-bold text-white">사이버펑크 2077: 팬텀 리버티</div>
+                                                <div class="view-count mt-1">🐍 5.8천 명 플레이 중</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <a href="Games/Tic-Tac_game.html" style="text-decoration: none;">
+                                        <div class="anime-card position-relative">
+                                            <div class="episode-badge">클래식 재미</div>
+                                            <img src="image/trending-game2.png" alt="틱택토 게임 포스터">
+                                            <div class="anime-info">
+                                                <span class="tag">퍼즐</span>
+                                                <span class="tag">멀티플레이어</span>
+                                                <div class="mt-2 fw-bold text-white">틱택토: X와 O의 대결</div>
+                                                <div class="view-count mt-1">🎮 2.54만 명 플레이 중</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <a href="Games/ghost_game.html" style="text-decoration: none;">
+                                        <div class="anime-card position-relative">
+                                            <div class="episode-badge">레벨 10+</div>
+                                            <img src="image/trending-game3.png" alt="게임 포스터">
+                                            <div class="anime-info">
+                                                <span class="tag">어드벤처</span>
+                                                <span class="tag">싱글 플레이어</span>
+                                                <div class="mt-2 fw-bold text-white">고스트 플라잉 게임: 유령 하늘</div>
+                                                <div class="view-count mt-1">👻 3.25만 명 플레이 중</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <a href="Games/memory_flip_game.html" style="text-decoration: none;">
+                                        <div class="anime-card position-relative">
+                                            <div class="episode-badge">메모리 플립 게임</div>
+                                            <img src="image/trending-game4.png" alt="게임 포스터">
+                                            <div class="anime-info">
+                                                <span class="tag">퍼즐</span>
+                                                <span class="tag">기억력</span>
+                                                <div class="mt-2 fw-bold text-white">메모리 플립</div>
+                                                <div class="view-count mt-1">🔥 2.03만 명 플레이 중</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="anime-card position-relative">
+                                        <div class="episode-badge">캠페인</div>
+                                        <img src="image/trending-game5.jpg" alt="오퍼레이션 그라운드제로 포스터">
+                                        <div class="anime-info">
+                                            <span class="tag">슈터</span>
+                                            <span class="tag">스토리 모드</span>
+                                            <div class="mt-2 fw-bold text-white">오퍼레이션 그라운드제로</div>
+                                            <div class="view-count mt-1">🔥 4.28만 명 플레이 중</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="anime-card position-relative">
+                                        <div class="episode-badge">온라인 PvP</div>
+                                        <img src="image/trending-game6.png" alt="게임 포스터">
+                                        <div class="anime-info">
+                                            <span class="tag">배틀로얄</span>
+                                            <span class="tag">모바일</span>
+                                            <div class="mt-2 fw-bold text-white">더 라스트 오브 어스 파트 I (PC 리메이크)</div>
+                                            <div class="view-count mt-1">🔥 6.59만 명 플레이 중</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="anime-card position-relative">
+                                        <div class="episode-badge">어드벤처</div>
+                                        <img src="image/trending-game7.jpg" alt="게임 포스터">
+                                        <div class="anime-info">
+                                            <span class="tag">오픈 월드</span>
+                                            <span class="tag">판타지</span>
+                                            <div class="mt-2 fw-bold text-white">스피드라인 퓨리</div>
+                                            <div class="view-count mt-1">🔥 2.23만 명 플레이 중</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="anime-card position-relative">
+                                        <div class="episode-badge">멀티플레이어</div>
+                                        <img src="image/trending-game8.jpg" alt="게임 포스터">
+                                        <div class="anime-info">
+                                            <span class="tag">배틀로얄</span>
+                                            <span class="tag">크리에이티브</span>
+                                            <div class="mt-2 fw-bold text-white">애쉬엔 보우: 블러드필즈</div>
+                                            <div class="view-count mt-1">🔥 8.85만 명 플레이 중</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="anime-card position-relative">
+                                        <div class="episode-badge">서바이벌 모드</div>
+                                        <img src="image/trending-game9.jpg" alt="게임 포스터">
+                                        <div class="anime-info">
+                                            <span class="tag">샌드박스</span>
+                                            <span class="tag">크리에이티브</span>
+                                            <div class="mt-2 fw-bold text-white">바운더리라인: 하트 오브 더 게임</div>
+                                            <div class="view-count mt-1">🔥 7.46만 명 플레이 중</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 인기 최고 조회수 섹션 -->
+                    <div class="col-lg-3">
+                        <div class="container">
+                            <div class="section-title">최고 조회수</div>
+                            <div class="d-flex flex-column gap-3 top-views pt-4">
+                                <div class="card">
+                                    <div class="episode-badge">워존 / 차세대</div>
+                                    <img src="image/About-bg.jpg" class="card-img-top" alt="배틀필드 2042">
+                                    <div class="card-body">
+                                        <p class="card-text">전쟁 군주 등장</p>
+                                        <p class="view-count">🔥 3.37만 명 온라인 플레이 중</p>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="episode-badge">배틀로얄</div>
+                                    <img src="image/top-view-game2.jpg" class="card-img-top" alt="에이펙스 레전드">
+                                    <div class="card-body">
+                                        <p class="card-text">파이브포스: 도시의 수호자들</p>
+                                        <p class="view-count">🔥 3.82만 명 온라인 플레이 중</p>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="episode-badge">전술 슈터</div>
+                                    <img src="image/top-view-game3.jpg" class="card-img-top" alt="발로란트">
+                                    <div class="card-body">
+                                        <p class="card-text">이클립스 리전</p>
+                                        <p class="view-count">🔥 5.29만 명 온라인 플레이 중</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 뉴스 및 업데이트 섹션 -->
+        <section class="news-updates">
+            <div class="container-fluid px-md-5 py-5">
+                <div class="row">
+                    <!-- 왼쪽 컬럼 -->
+                    <div class="col-lg-9">
+                        <div class="container">
+                            <h5 class="fw-bold mb-4" style="color: #00ffe1;">뉴스 & 업데이트</h5>
+                            <div class="row g-3">
+                                <!-- 주요 게시물 -->
+                                <div class="col-md-6">
+                                    <div class="position-relative featured-post">
+                                        <img src="image/news-feature1.jpg" class="img-fluid" alt="">
+                                        <span class="badge text-dark position-absolute top-0 start-0 m-2">리뷰</span>
+                                        <div
+                                            class="position-absolute bottom-0 p-3 text-white bg-dark bg-opacity-50 w-100">
+                                            <p class="mb-1 fw-bold">"팬텀 코어: 구원" 2025년 9월 15일 전 세계 출시 예정</p>
+                                            <small class="text-white">작성자 Admin · 2025년 8월 1일 · 💬 26</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="position-relative featured-post">
+                                        <img src="image/news-feature2.jpg" class="img-fluid" alt="">
+                                        <span class="badge text-dark position-absolute top-0 start-0 m-2">리뷰</span>
+                                        <div
+                                            class="position-absolute bottom-0 p-3 text-white bg-dark bg-opacity-50 w-100">
+                                            <p class="mb-1 fw-bold">"파워플레이 X" 2025년 11월 10일 차세대 콘솔 출시</p>
+                                            <small class="text-white">작성자 Admin · 2025년 9월 22일 · 💬 34</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 미니 게시물 -->
+                                <div class="col-md-4">
+                                    <div class="position-relative mini-post">
+                                        <img src="image/news-mini1.jpg" class="img-fluid" alt="">
+                                        <span class="badge text-dark position-absolute top-0 start-0 m-2">리뷰</span>
+                                        <div class="bg-dark text-white p-2">
+                                            <p class="mb-0 small" style="text-transform: uppercase;">"배틀코어: 몰락"과 "워플릿
+                                                전술"이 전 세계 새로운 콘솔로 확장됩니다.</p>
+                                            <small class="text-white">2019년 8월 1일 · 💬 20</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="position-relative mini-post">
+                                        <img src="image/news-mini2.jpg" class="img-fluid" alt="">
+                                        <span class="badge text-dark position-absolute top-0 start-0 m-2">리뷰</span>
+                                        <div class="bg-dark text-white p-2">
+                                            <p class="mb-0 small">레일 러시 세일 2026 진행 중 – ₹500 이하 최고의 기차 레이싱 게임!</p>
+                                            <small class="text-white">2019년 8월 5일 · 👁️ 56 조회수</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="position-relative mini-post">
+                                        <img src="image/news-mini3.jpg" class="img-fluid" alt="">
+                                        <span class="badge text-dark position-absolute top-0 start-0 m-2">리뷰</span>
+                                        <div class="bg-dark text-white p-2">
+                                            <p class="mb-0 small mt-1">🤖 메크 마치 세일 2026 진행 중 – ₹500 이하 최고의 로봇 전쟁 게임!</p>
+                                            <small class="text-white">🕒 2026년 8월 20일 · 👁️ 120 · 💬 50</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽 컬럼 -->
+                    <div class="col-lg-3 pt-2">
+                        <div class="container">
+                            <div class="mb-4">
+                                <h6 class="fw-bold pt-4 pt-md-0" style="color: #00ffe1;">소셜 미디어</h6>
+                                <div class="d-grid gap-3 pt-3">
+                                    <button class="btn btn-dark text-start social-btn">
+                                        <i class="fa-brands fa-facebook-f pe-2"></i> 페이스북
+                                        <span class="float-end">1.2k 팔로워</span>
+                                    </button>
+                                    <button class="btn btn-dark text-start social-btn">
+                                        <i class="fa-brands fa-x-twitter pe-2"></i> 트위터
+                                        <span class="float-end">1.2k 팔로워</span>
+                                    </button>
+                                    <button class="btn btn-dark text-start social-btn">
+                                        <i class="fa-brands fa-youtube pe-2"></i> 유튜브
+                                        <span class="float-end">1.2k 팔로워</span>
+                                    </button>
+                                    <button class="btn btn-dark text-start social-btn">
+                                        <i class="fa-brands fa-instagram pe-2"></i> 인스타그램
+                                        <span class="float-end">2.6k 팔로워</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="hardware-guides">
+                                <h6 class="fw-bold" style="color: #00ffe1;">하드웨어 가이드</h6>
+                                <ul class="list-unstyled pt-2">
+                                    <li class="d-flex gap-2 mb-3">
+                                        <img src="image/trending-game5.jpg" alt="" width="70" height="70"
+                                            class="img-thumbnail">
+                                        <div class="text-white ps-2">
+                                            <p class="mb-0 small">🏏 크리켓 열풍 포스터가 경기장 DJ 파티로 변신...</p>
+                                            <small>2019년 8월 1일 · 💬 12</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex gap-2 mb-3">
+                                        <img src="image/header-bg2.png" alt="" width="70" height="70"
+                                            class="img-thumbnail">
+                                        <div class="text-white ps-2">
+                                            <p class="mb-0 small">🏎️ 스트리트 레이싱 포스터가 드리프트 파티 초대장으로 변신...</p>
+                                            <small>2019년 8월 1일 · 💬 12</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex gap-2 mb-3">
+                                        <img src="image/header-bg3.jpg" alt="" width="70" height="70"
+                                            class="img-thumbnail">
+                                        <div class="text-white ps-2">
+                                            <p class="mb-0 small">👽 외계인 침공 포스터가 은하계 레이브 파티로 변신...</p>
+                                            <small>2019년 8월 1일 · 💬 12</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex gap-2 mb-3">
+                                        <img src="image/top-view-game1.jpg" alt="" width="70" height="70"
+                                            class="img-thumbnail ps-2">
+                                        <div class="text-white">
+                                            <p class="mb-0 small">🎖️ 군대 모집 포스터가 전쟁 게임 토너먼트 초대로 변신...</p>
+                                            <small>2019년 8월 1일 · 💬 12</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex gap-2 mb-3">
+                                        <img src="image/header-bg.png" alt="" width="70" height="70"
+                                            class="img-thumbnail">
+                                        <div class="text-white ps-2">
+                                            <p class="mb-0 small">🔫 표적 연습 포스터가 실전 전투 구역 경고로 변신...</p>
+                                            <small>2019년 8월 1일 · 💬 12</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex gap-2 mb-3">
+                                        <img src="image/top-view-game3.jpg" alt="" width="70" height="70"
+                                            class="img-thumbnail">
+                                        <div class="text-white ps-2">
+                                            <p class="mb-0 small">🌌 외계 도시 투어 포스터가 행성 생존 미션으로 변신...</p>
+                                            <small>2019년 8월 1일 · 💬 12</small>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 토너먼트 섹션 -->
+        <section class="tournament-section py-md-5 py-3">
+            <div class="container-fluid full-section">
+
+                <div class="row align-items-center px-md-5">
+
+                    <div class="col-12 col-md-6 col-lg-3 img-col1">
+                        <img src="image/tournament-img.png" alt="이미지 1">
+                    </div>
+
+                    <!-- 토너먼트 박스 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="tournament-box mt-2 mt-md-0">
+                            <span class="badge bg-danger badge-position">토너먼트</span>
+                            <h5 class="pt-3">월드 오브 워크래프트</h5>
+                            <p><strong>토너먼트 시작:</strong> <span>2018년 6월 20일</span></p>
+                            <p><strong>토너먼트 종료:</strong> <span>2018년 7월 1일</span></p>
+                            <p><strong>참가 팀:</strong> <span>10개 팀</span></p>
+                            <p><strong>토너먼트 주최자:</strong> <span>관리자</span></p>
+                            <p><strong class="text-warning">상금:</strong> 1위: $2000, 2위: $1000, 3위: $500</p>
+                        </div>
+                    </div>
+
+                    <!-- 프리미엄 토너먼트 박스 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="tournament-box mt-4 mt-md-0">
+                            <span class="badge bg-warning text-dark badge-position">프리미엄 토너먼트</span>
+                            <h5 class="pt-3">둠</h5>
+                            <p><strong>토너먼트 시작:</strong> <span>2018년 6월 20일</span></p>
+                            <p><strong>토너먼트 종료:</strong> <span>2018년 7월 1일</span></p>
+                            <p><strong>참가 팀:</strong> <span>10개 팀</span></p>
+                            <p><strong>토너먼트 주최자:</strong> <span>관리자</span></p>
+                            <p><strong class="text-warning">상금:</strong> 1위: $2000, 2위: $1000, 3위: $500</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3 img-col2">
+                        <img src="image/tournament-img.png" alt="이미지 1">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-title pb-5">
+                <img src="image/logo.png" alt="">
+                <h1 class="ps-2 pt-3">EMOZIN</h1>
+            </div>
+            <div class="row text-start px-2">
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">EMOZIN 탐색</div>
+                    <a href="#">최고 평점 게임</a><br>
+                    <a href="#">신규 출시</a><br>
+                    <a href="#">게임 공략</a><br>
+                    <a href="#">멀티플레이어 아레나</a><br>
+                    <a href="#">프로 팁 & 트릭</a><br>
+                    <a href="#">EMOZIN 커뮤니티</a>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">개요</div>
+                    <a href="#">소개</a><br>
+                    <a href="#">연락처</a><br>
+                    <a href="#">이용 약관</a><br>
+                    <a href="#">개인정보 보호정책</a><br>
+                    <a href="#">전 세계 사이트맵</a><br>
+                    <a href="#">지역 사이트맵</a>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">커뮤니티</div>
+                    <a href="#">커뮤니티 센터</a><br>
+                    <a href="#">지원</a><br>
+                    <a href="#">도움말</a><br>
+                    <a href="#">내 정보 판매 금지</a>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="fw-bold mb-2">광고</div>
+                    <a href="#">미디어 키트</a><br>
+                    <a href="#">연락처</a><br>
+                    <a href="#">광고하기</a><br>
+                    <a href="#">파트너십 기회</a>
+                </div>
+
+                <div class="col-12 col-md-8 col-lg-4">
+                    <div class="fw-bold mb-1">EMOZIN 앱</div>
+                    <p style="color: rgb(163, 158, 158);">EMOZIN으로 게임 경험을 향상시키세요 – 게임 가이드, 업데이트, 커뮤니티 배틀을 위한 원스톱 플랫폼입니다.
+                        아이템 드롭, 퀘스트, 파워업을 놓치지 마세요!</p>
+
+                    <div class="app-icons mb-3">
+                        <img src="image/google-play-logo.png" alt="App Store">
+                        <img src="image/app-store-logo.png" alt="Google Play">
+                    </div>
+                    <div class="app-icons">
+                        <img src="image/google-play-logo.png" alt="App Store">
+                        <img src="image/app-store-logo.png" alt="Google Play">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 footer-social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="bike-animation">
+            <img src="image/footer-running-img.png" class="bike-img" alt="Bike">
+        </div>
+
+    </footer>
+
+    <script src="script.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"> </script>
+
+</body>
+
+</html>

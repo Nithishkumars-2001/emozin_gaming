@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Flip Game - User vs Computer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+
+    <style>
+        body {
+            background: radial-gradient(#323232, #000000, #323232);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        #game-board {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .card {
+            width: 100px;
+            height: 100px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .card.flip .inner {
+            transform: rotateY(180deg);
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            backface-visibility: hidden;
+        }
+
+        .front {
+            background: linear-gradient(145deg, #cefc04, #323232);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2rem;
+        }
+
+        .back {
+            background: #ffc107;
+            transform: rotateY(180deg);
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card.matched .inner {
+            box-shadow: 0 0 15px 5px lime;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            #game-board {
+                grid-template-columns: repeat(4, 80px);
+                gap: 10px;
+            }
+
+            .card {
+                width: 80px;
+                height: 80px;
+            }
+
+            .front,
+            .back {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #game-board {
+                grid-template-columns: repeat(4, 70px);
+                gap: 8px;
+            }
+
+            .card {
+                width: 70px;
+                height: 70px;
+            }
+
+            .front,
+            .back {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            #game-board {
+                grid-template-columns: repeat(4, 60px);
+                gap: 5px;
+            }
+
+            .card {
+                width: 60px;
+                height: 60px;
+            }
+
+            .front,
+            .back {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container py-5 text-center">
+        <h1 class="text-light mb-4">🧠 Memory Flip Game</h1>
+
+        <div class="mb-4 text-white">
+            <h5>User: <span id="userPoints">0</span> | Computer: <span id="computerPoints">0</span></h5>
+            <p>Turn: <span id="currentTurn">User</span></p>
+        </div>
+
+        <div id="game-board" class="row justify-content-center"></div>
+        <p class="text-white mt-4" id="status"></p>
+    </div>
+
+    <script>
+        const board = document.getElementById('game-board');
+        const statusText = document.getElementById('status');
+        const userScoreText = document.getElementById('userPoints');
+        const compScoreText = document.getElementById('computerPoints');
+        const currentTurnText = document.getElementById('currentTurn');
+
+        const emojis = ['🍎', '🚗', '🎮', '🎲', '🐶', '⚽', '🚀', '🎧'];
+        let cards = [...emojis, ...emojis];
+        let flipped = [];
+        let matched = [];
+        let isUserTurn = true;
+        let userPoints = 0;
+        let computerPoints = 0;
+        let boardLocked = false; // 🚨 Important fix
+
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        function createBoard() {
+            shuffle(cards);
+            board.innerHTML = '';
+            cards.forEach((emoji, index) => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.dataset.index = index;
+                card.innerHTML = `
+          <div class="inner">
+            <div class="front"></div>
+            <div class="back">${emoji}</div>
+          </div>`;
+                board.appendChild(card);
+            });
+        }
+
+        function updateScores() {
+            userScoreText.textContent = userPoints;
+            compScoreText.textContent = computerPoints;
+            currentTurnText.textContent = isUserTurn ? 'User' : 'Computer';
+        }
+
+        function checkMatch() {
+            const [card1, card2] = flipped;
+            const emoji1 = card1.querySelector('.back').textContent;
+            const emoji2 = card2.querySelector('.back').textContent;
+
+            if (emoji1 === emoji2) {
+                card1.classList.add('matched');
+                card2.classList.add('matched');
+                matched.push(emoji1);
+                if (isUserTurn) userPoints++;
+                else computerPoints++;
+                flipped = [];
+                boardLocked = false; // unlock
+                updateScores();
+
+                if (matched.length === emojis.length) {
+                    const winner = userPoints > computerPoints ? 'User' : (userPoints < computerPoints ? 'Computer' : 'Tie');
+                    statusText.textContent = `🎉 Game Over! ${winner} Wins!`;
+                    return;
+                }
+
+                if (!isUserTurn) {
+                    setTimeout(computerTurn, 1000);
+                }
+            } else {
+                setTimeout(() => {
+                    card1.classList.remove('flip');
+                    card2.classList.remove('flip');
+                    flipped = [];
+                    isUserTurn = !isUserTurn;
+                    updateScores();
+                    boardLocked = false; // unlock after mismatch
+                    if (!isUserTurn) {
+                        setTimeout(computerTurn, 1000);
+                    }
+                }, 1000);
+            }
+        }
+
+        function computerTurn() {
+            const allCards = Array.from(document.querySelectorAll('.card'));
+            const unflipped = allCards.filter(c => !c.classList.contains('flip') && !c.classList.contains('matched'));
+
+            if (unflipped.length < 2) return;
+
+            const indices = [];
+            while (indices.length < 2) {
+                const randIndex = Math.floor(Math.random() * unflipped.length);
+                if (!indices.includes(randIndex)) {
+                    indices.push(randIndex);
+                }
+            }
+
+            const card1 = unflipped[indices[0]];
+            const card2 = unflipped[indices[1]];
+
+            card1.classList.add('flip');
+            flipped.push(card1);
+            setTimeout(() => {
+                card2.classList.add('flip');
+                flipped.push(card2);
+                checkMatch();
+            }, 500);
+        }
+
+        board.addEventListener('click', (e) => {
+            if (!isUserTurn || flipped.length === 2 || boardLocked) return;
+
+            let card = e.target;
+            while (card && !card.classList.contains('card')) {
+                card = card.parentElement;
+            }
+
+            if (!card || card.classList.contains('flip') || card.classList.contains('matched')) return;
+
+            card.classList.add('flip');
+            flipped.push(card);
+
+            if (flipped.length === 2) {
+                boardLocked = true; // 🚫 Lock the board until match is processed
+                checkMatch();
+            }
+        });
+
+        createBoard();
+        updateScores();
+    </script>
+</body>
+
+</html>

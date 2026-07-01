@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Flappy Bird Game</title>
+
+    <!--My css-->
+    <link rel="stylesheet" href="../css/Snake_game.css">
+    <link rel="icon" href="../image/logo.png" type="image/png">
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .background {
+            height: 100vh;
+            width: 100vw;
+            background: url('../image/ghost-background-img.webp') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        .bird {
+            height: 100px;
+            width: 130px;
+            position: fixed;
+            top: 40vh;
+            left: 30vw;
+            z-index: 100;
+        }
+
+        .pipe_sprite {
+            background: url('../image/ghost-pillar-1.png') no-repeat center center;
+            background-size: cover;
+            position: fixed;
+            background-color: transparent;
+            top: 40vh;
+            left: 100vw;
+            height: 70vh;
+            width: 6vw;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .pipe_sprite::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        /* Keyframes for text animation */
+        @keyframes fadeInText {
+            0% {
+                opacity: 0.3;
+                transform: translate(-50%, -50%) scale(0.98);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.02);
+            }
+        }
+
+        .messageStyle {
+            /*background: white;*.*/
+            padding: 30px;
+        }
+
+        .message {
+            position: absolute;
+            z-index: 10;
+            color: black;
+            top: 30%;
+            left: 50%;
+            font-size: 3rem;
+            font-weight: bold;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: transparent;
+            padding: 20px 40px;
+            border-radius: 20px;
+            white-space: nowrap;
+            animation: fadeInText 2s ease-in-out infinite alternate;
+        }
+
+        /* Blinking animation for each span */
+        .blink {
+            animation: blinkColor 1.5s infinite;
+            animation-delay: calc(var(--i) * 0.1s);
+            display: inline-block;
+        }
+
+        /* Keyframes for blinking color */
+        @keyframes blinkColor {
+
+            0%,
+            100% {
+                opacity: 1;
+                color: #fff;
+            }
+
+            50% {
+                opacity: 0.3;
+                color: red;
+            }
+        }
+
+        .score {
+            position: fixed;
+            z-index: 10;
+            height: 10vh;
+            font-size: 5vh;
+            font-weight: 900;
+            color: white;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
+            top: 0;
+            left: 0;
+            margin: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .score_val {
+            color: red;
+            font-size: 5vh;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 1080px) {
+            .message {
+                font-size: 50px;
+                top: 50%;
+                white-space: nowrap;
+            }
+
+            .score {
+                font-size: 8vh;
+            }
+
+            .bird {
+                width: 120px;
+                height: 90px;
+            }
+
+            .pipe_sprite {
+                width: 14vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"> </div>
+    <img src="../image/ghost.png" alt="bird-img" class="bird" id="bird-1">
+
+    <div class="message">
+        <span class="blink" style="--i:0">E</span>
+        <span class="blink" style="--i:1">n</span>
+        <span class="blink" style="--i:2">t</span>
+        <span class="blink" style="--i:3">e</span>
+        <span class="blink" style="--i:4">r</span>
+        <span class="blink" style="--i:5"> </span>
+        <span class="blink" style="--i:6">T</span>
+        <span class="blink" style="--i:7">o</span>
+        <span class="blink" style="--i:8"> </span>
+        <span class="blink" style="--i:9">S</span>
+        <span class="blink" style="--i:10">t</span>
+        <span class="blink" style="--i:11">a</span>
+        <span class="blink" style="--i:12">r</span>
+        <span class="blink" style="--i:13">t</span>
+        <span class="blink" style="--i:14"> </span>
+        <span class="blink" style="--i:15">G</span>
+        <span class="blink" style="--i:16">a</span>
+        <span class="blink" style="--i:17">m</span>
+        <span class="blink" style="--i:18">e</span>
+    </div>
+
+    <div class="score">
+        <span class="score_title"> </span>
+        <span class="score_val"> </span>
+    </div>
+
+    <script src="script.js" defer> </script>
+    <script>
+        let move_speed = 3, grativy = 0.5;
+        let bird = document.querySelector('.bird');
+        let img = document.getElementById('bird-1');
+        let sound_point = new Audio('sounds effect/point.mp3');
+        let sound_die = new Audio('sounds effect/die.mp3');
+
+        // getting bird element properties
+        let bird_props = bird.getBoundingClientRect();
+
+        // This method returns DOMReact -> top, right, bottom, left, x, y, width and height
+        let background = document.querySelector('.background').getBoundingClientRect();
+
+        let score_val = document.querySelector('.score_val');
+        let message = document.querySelector('.message');
+        let score_title = document.querySelector('.score_title');
+
+        let game_state = 'Start';
+        img.style.display = 'none';
+        message.classList.add('messageStyle');
+
+        document.addEventListener('keydown', (e) => {
+
+            if (e.key == 'Enter' && game_state != 'Play') {
+                document.querySelectorAll('.pipe_sprite').forEach((e) => {
+                    e.remove();
+                });
+                img.style.display = 'block';
+                bird.style.top = '40vh';
+                game_state = 'Play';
+                message.innerHTML = '';
+                score_title.innerHTML = 'Score : ';
+                score_val.innerHTML = '0';
+                message.classList.remove('messageStyle');
+                play();
+            }
+        });
+
+        function play() {
+            function move() {
+                if (game_state != 'Play') return;
+
+                let pipe_sprite = document.querySelectorAll('.pipe_sprite');
+                pipe_sprite.forEach((element) => {
+                    let pipe_sprite_props = element.getBoundingClientRect();
+                    bird_props = bird.getBoundingClientRect();
+
+                    if (pipe_sprite_props.right <= 0) {
+                        element.remove();
+                    } else {
+                        if (bird_props.left < pipe_sprite_props.left + pipe_sprite_props.width && bird_props.left + bird_props.width > pipe_sprite_props.left && bird_props.top < pipe_sprite_props.top + pipe_sprite_props.height && bird_props.top + bird_props.height > pipe_sprite_props.top) {
+                            game_state = 'End';
+                            message.innerHTML = 'Game Over'.fontcolor('red') + '<br>Press Enter To Restart';
+                            message.classList.add('messageStyle');
+                            img.style.display = 'none';
+                            sound_die.play();
+                            return;
+                        } else {
+                            if (pipe_sprite_props.right < bird_props.left && pipe_sprite_props.right + move_speed >= bird_props.left && element.increase_score == '1') {
+                                score_val.innerHTML = + score_val.innerHTML + 1;
+                                sound_point.play();
+                            }
+                            element.style.left = pipe_sprite_props.left - move_speed + 'px';
+                        }
+                    }
+                });
+                requestAnimationFrame(move);
+            }
+            requestAnimationFrame(move);
+
+            let bird_dy = 0;
+            function apply_gravity() {
+                if (game_state != 'Play') return;
+                bird_dy = bird_dy + grativy;
+                document.addEventListener('keydown', (e) => {
+                    if (e.key == 'ArrowUp' || e.key == ' ') {
+                        img.src = '../image/ghost.png';
+                        bird_dy = -7.6;
+                    }
+                });
+
+                document.addEventListener('keyup', (e) => {
+                    if (e.key == 'ArrowUp' || e.key == ' ') {
+                        img.src = '../image/ghost.png';
+                    }
+                });
+
+                if (bird_props.top <= 0 || bird_props.bottom >= background.bottom) {
+                    game_state = 'End';
+                    message.style.left = '28vw';
+                    window.location.reload();
+                    message.classList.remove('messageStyle');
+                    return;
+                }
+                bird.style.top = bird_props.top + bird_dy + 'px';
+                bird_props = bird.getBoundingClientRect();
+                requestAnimationFrame(apply_gravity);
+            }
+            requestAnimationFrame(apply_gravity);
+
+            let pipe_seperation = 0;
+
+            let pipe_gap = 35;
+
+            function create_pipe() {
+                if (game_state != 'Play') return;
+
+                if (pipe_seperation > 115) {
+                    pipe_seperation = 0;
+
+                    let pipe_posi = Math.floor(Math.random() * 43) + 8;
+                    let pipe_sprite_inv = document.createElement('div');
+                    pipe_sprite_inv.className = 'pipe_sprite';
+                    pipe_sprite_inv.style.top = pipe_posi - 70 + 'vh';
+                    pipe_sprite_inv.style.left = '100vw';
+
+                    document.body.appendChild(pipe_sprite_inv);
+                    let pipe_sprite = document.createElement('div');
+                    pipe_sprite.className = 'pipe_sprite';
+                    pipe_sprite.style.top = pipe_posi + pipe_gap + 'vh';
+                    pipe_sprite.style.left = '100vw';
+                    pipe_sprite.increase_score = '1';
+
+                    document.body.appendChild(pipe_sprite);
+                }
+                pipe_seperation++;
+                requestAnimationFrame(create_pipe);
+            }
+            requestAnimationFrame(create_pipe);
+
+
+        }
+    </script>
+</body>
+
+</html>
